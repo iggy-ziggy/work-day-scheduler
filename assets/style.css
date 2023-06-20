@@ -63,3 +63,12 @@
     font-size: 20px;
     transition: all 0.3s ease-in-out;
   }
+
+  #saveMsg {
+    height: 25px;
+    color: #77dd77;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: -30px;
+  }
