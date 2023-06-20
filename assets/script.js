@@ -23,9 +23,26 @@ $(function () {
     //button event
     save.on("click", function (event) {
         event.preventDefault()
+        var saveMsg = $("#saveMsg");
         var description = $(this).siblings(".description").val().replace(key);
+        var descVal = $(this).siblings(".description").val();
         var key = $(this).parent().attr("id");
-        localStorage.setItem(key, JSON.stringify(description))
+        
+        if (descVal == "") {
+            saveMsg.text("Please enter some text!");
+            setTimeout(function() {
+                saveMsg.text("");
+            },2000);
+            return;
+        } else {
+            localStorage.setItem(key, JSON.stringify(description));
+        //adds message when save button is clicked
+        saveMsg.text("Saved!");
+        //clears message after 2 seconds
+        setTimeout(function() {
+            saveMsg.text("");
+        },2000);
+        };       
     });
     //print to screen on reload
     for(let i = 9; i <= 17; i++) {
